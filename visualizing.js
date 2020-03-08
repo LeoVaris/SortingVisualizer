@@ -71,6 +71,14 @@ async function visualizeMergeSort() {
     }
 }
 
+async function visualizeCycleSort() {
+    resetValues();
+    if (!sorting) {
+        sorting = true;
+        cycleSort(array);
+    }
+}
+
 function resetValues() {
     accesses = 0;
     comparisons = 0;

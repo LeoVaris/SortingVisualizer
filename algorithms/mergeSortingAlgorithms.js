@@ -40,4 +40,5 @@ async function copyArray(array, begin, end, workArray) {
     for (let i = begin; i < end; ++i) {
         workArray[i] = array[i];
     }
+    
 }

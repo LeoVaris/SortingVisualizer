@@ -103,3 +103,54 @@ async function gnomeSort(array) {
     }
     sorting = false;
 }
+
+async function cycleSort(array) {
+    let n = array.length;
+
+    for (let i = 0; i < n - 1; ++i) {
+        let item = await accessArray(array, i);
+
+        let pos = i;
+        for (let j = i + 1; j < n; j++) {
+            if (await accessArray(array, j) < item) {
+                pos++;
+            }
+            comparisons++;
+        }
+
+        if (pos == i) {
+            continue;
+        }
+        while (item == await accessArray(array, pos)) {
+            comparisons++;
+            pos++;
+        }
+        comparisons++;
+        let temp = array[pos];
+        array[pos] = item;
+        item = temp;
+        accesses += 2;
+
+        while (pos != i) {
+            pos = i;
+            for (let j = i + 1; j < n; j++) {
+                if (await accessArray(array, j) < item) {
+                    pos++;
+                }
+                comparisons++;
+            }
+            while (item == await accessArray(array, pos)) {
+                comparisons++;
+                pos++;
+            }
+            comparisons++;
+
+            let temp = array[pos];
+            array[pos] = item;
+            await swap(array, pos, pos);
+            item = temp;
+            accesses += 2;
+        }
+    }
+    sorting = false;
+}

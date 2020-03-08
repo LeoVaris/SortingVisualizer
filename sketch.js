@@ -25,6 +25,7 @@ let gnomeSortBtn;
 let quickSortBtn;
 let shellSortBtn;
 let mergeSortBtn;
+let cycleSortBtn;
 
 let elementCountSlider;
 let elemCntInfo;
@@ -88,6 +89,10 @@ function setup() {
     mergeSortBtn = createButton('Merge sort');
 	mergeSortBtn.mousePressed(visualizeMergeSort);
     mergeSortBtn.position(20, sortBtnPos + 240);
+
+    cycleSortBtn = createButton('Cycle sort');
+	cycleSortBtn.mousePressed(visualizeCycleSort);
+    cycleSortBtn.position(20, sortBtnPos + 270);
 
 	resetArrayBtn = createButton('ResetArray');
 	resetArrayBtn.mousePressed(createArray);

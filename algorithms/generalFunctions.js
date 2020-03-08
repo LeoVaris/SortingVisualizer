@@ -3,7 +3,9 @@
 async function swap(array, ind1, ind2) {
     states[ind1] = 1;
     states[ind2] = 1;
-    await sleep(swapDelay);
+    if (swapDelay != 0) {
+        await sleep(swapDelay);
+    }
     accesses += 4;
 	let temp = array[ind1];
 	array[ind1] = array[ind2];
@@ -28,7 +30,9 @@ async function compare(array, ind1, ind2) {
         states[ind1] = 2;
     if (states[ind2] !== 1)
         states[ind2] = 2;
-    await sleep(compareDelay);
+    if (compareDelay != 0) {
+        await sleep(compareDelay);
+    }
     if (states[ind1] === 2)
         states[ind1] = 0;
     if (states[ind2] === 2)
