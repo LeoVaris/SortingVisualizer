@@ -89,3 +89,17 @@ async function cocktailShakeSort(array) {
     } while(swapped);
     sorting = false;
 }
+
+async function gnomeSort(array) {
+    let pos = 0;
+    let n = array.length;
+    while (pos < n) {
+        if (pos == 0 || await gnomeSortCompare(array, pos, pos-1)) {
+            pos++;
+        } else {
+            await swap(array, pos, pos-1);
+            pos--;
+        }
+    }
+    sorting = false;
+}

@@ -21,6 +21,7 @@ let insertionSortBtn;
 let selectionSortBtn;
 let combSortBtn;
 let cocktailSortBtn;
+let gnomeSortBtn;
 let quickSortBtn;
 let shellSortBtn;
 let mergeSortBtn;
@@ -68,21 +69,25 @@ function setup() {
 	combSortBtn.mousePressed(visualizeCombSort);
     combSortBtn.position(20, sortBtnPos + 90);
 
-    cocktailSortBtn = createButton('Cocktail shaker sort');
-	cocktailSortBtn.mousePressed(visualizeCocktailSort);
+    cocktailSortBtn = createButton('Gnome sort');
+	cocktailSortBtn.mousePressed(visualizeGnomeSort);
     cocktailSortBtn.position(20, sortBtnPos + 120);
+
+    gnomeSortBtn = createButton('Cocktail shaker sort');
+	gnomeSortBtn.mousePressed(visualizeCocktailSort);
+    gnomeSortBtn.position(20, sortBtnPos + 150);
     
     quickSortBtn = createButton('Quicksort');
 	quickSortBtn.mousePressed(visualizeQuickSort);
-    quickSortBtn.position(20, sortBtnPos + 150);
+    quickSortBtn.position(20, sortBtnPos + 180);
 
     shellSortBtn = createButton('Shellsort');
 	shellSortBtn.mousePressed(visualizeShellSort);
-    shellSortBtn.position(20, sortBtnPos + 180);
+    shellSortBtn.position(20, sortBtnPos + 210);
 
     mergeSortBtn = createButton('Merge sort');
 	mergeSortBtn.mousePressed(visualizeMergeSort);
-    mergeSortBtn.position(20, sortBtnPos + 210);
+    mergeSortBtn.position(20, sortBtnPos + 240);
 
 	resetArrayBtn = createButton('ResetArray');
 	resetArrayBtn.mousePressed(createArray);

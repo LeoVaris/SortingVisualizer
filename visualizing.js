@@ -39,6 +39,14 @@ async function visualizeCocktailSort() {
     }
 }
 
+async function visualizeGnomeSort() {
+    resetValues();
+    if (!sorting) {
+        sorting = true;
+        gnomeSort(array);
+    }
+}
+
 async function visualizeQuickSort() {
     resetValues();
     if (!sorting) {

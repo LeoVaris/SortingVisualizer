@@ -60,3 +60,18 @@ async function mergeSortSwap(array, workArray, ia, iw) {
     states[ia] = 0;
     states[iw] = 0;
 }
+
+async function gnomeSortCompare(array, ind1, ind2) {
+    comparisons++;
+    accesses += 2;
+    if (states[ind1] !== 1)
+        states[ind1] = 2;
+    if (states[ind2] !== 1)
+        states[ind2] = 2;
+    await sleep(compareDelay);
+    if (states[ind1] === 2)
+        states[ind1] = 0;
+    if (states[ind2] === 2)
+        states[ind2] = 0;
+    return array[ind1] >= array[ind2];
+}
